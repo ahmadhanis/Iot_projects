@@ -6,11 +6,11 @@
 ESP8266WebServer server(80);
 
 String ssid, pass, content;
-bool apmode = false;                              //AP mode status
+bool apmode = false;                              //Default AP mode status
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(115200);
+  Serial.begin(115200);                           //Serial monitor
   readData();                                     //Check EEPROM for stored credentials
   if (ssid.length() == 0) {                       //If not found set AP mode
     ap_mode();
